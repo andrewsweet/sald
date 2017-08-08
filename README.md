@@ -1,5 +1,5 @@
-#sald
-##Installation
+# sald
+## Installation
 Fork this repo into desired location then from command line run
 ```
 npm link
@@ -9,8 +9,8 @@ run as administrator on Windows.
 
 Note: The current version of node.js for windows has a bug. If you receive an
 ENOENT error, check [here](http://stackoverflow.com/questions/25093276/node-js-windows-error-enoent-stat-c-users-rt-appdata-roaming-npm)
-##
-##Usage
+
+## Usage
 ```
 sald [command] args
   commands
@@ -19,11 +19,11 @@ sald [command] args
 ```
 You will want to use `sald create myProjName` to create a starter project. It is not
 recommended to do this in the sald directory.
-##build.js
+## build.js
 The build.js file must be in the current working directory when calling sald build.
 This file should export an object which specifies the output location, entry point, and the method for handling custom file types.
 
-###Example build.js
+### Example build.js
 ```
 // Load an image file from file = {name,data}
 function loadImage(file) {
@@ -80,14 +80,14 @@ module.exports = {
 
 This build.js file will translate png and jpg images using loadImage and wav and ogg files using loadAudio.
 
-##Tilemap.js Usage
+## Tilemap.js Usage
 
-###Require Tilemap.js in your code
+### Require Tilemap.js in your code
 ```
 var Tilemap = require('sald:Tilemap.js');
 ```  
 
-###Initilize Tilemap library using load
+### Initilize Tilemap library using load
 Initilize Tilemap with correct parameters.
 ```
 Tilemap(img, map, tilW, tilH, tilR, tilC, mapW, mapH, )
@@ -102,7 +102,7 @@ Tilemap(img, map, tilW, tilH, tilR, tilC, mapW, mapH, )
   defaultTile = Number of tile to be draw when outside of map
 ```
 
-###Drawing
+### Drawing
 Tilemap.draw(camera) takes in a object that has properties x & y which defines the center of the map to draw from. Call it after updates to tilemap or camera for redraw.
 ```
 camera = {x : 0, y : 0}
@@ -110,7 +110,7 @@ camera = {x : 0, y : 0}
   y = y index location in the 2d world map that was pased to Tilemap
 ```
 
-###Isometric
+### Isometric
 To draw isometric tiles, developers will have to provide a tilemap with skewed tiles. Then set the columnOffset paramter of Tilemap. 
 ```
 Tilemap.columnOffset = {x : xOffset, y : yOffset}
